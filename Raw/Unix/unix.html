@@ -1,0 +1,293 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {	
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;	
+}
+
+a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style>
+<title>Unix</title>
+
+</head>
+<body>
+<h1>Unix</h1>
+
+<h2>Part 1</h2>
+
+<p><strong>Goal:</strong> Get familiar with the system</p>
+
+<h3>Step 1</h3>
+
+<ul>
+<li>Discover the system</li>
+<li>Start a terminal</li>
+<li><p>Use <code>man man</code> command, and read the manual</p>
+
+<pre><code>  hint:   hit `q` to quit, read `man less` to learn more about the reader
+</code></pre></li>
+<li><p>Get familiar with <code>echo</code>, <code>cd</code>, <code>ls</code>, <code>mkdir</code>, <code>cp</code>, <code>mv</code>, <code>rm</code>, <code>touch</code>, <code>env</code>, <code>export</code>, <code>unset</code></p>
+
+<pre><code>  hint:   RTFM! (Read The Fucking Manual =) )
+</code></pre></li>
+</ul>
+
+
+<h3>Step 2</h3>
+
+<ul>
+<li><p>Create a directory <code>~/share/ex/unix/part1</code></p>
+
+<pre><code>  hint:   What is `~`?
+          RTFM!
+</code></pre></li>
+<li><p>Create an empty file <code>~/share/ex/unix/part1/file1</code></p>
+
+<pre><code>  hint:   `man touch`
+</code></pre></li>
+<li><p>Create a file <code>~/share/ex/unix/part1/file2</code> containing <code>Unix Step 2</code></p>
+
+<pre><code>  hint:   Inputs, Outputs and redirections (`&gt;`, `&gt;&gt;`, `&lt;`, `&lt;&lt;`)
+</code></pre></li>
+<li><p>Create a link <code>~/share/ex/unix/part1/file3</code> to <code>~/share/ex/unix/part1/file2</code></p>
+
+<pre><code>  hint:   `man ln`
+</code></pre></li>
+</ul>
+
+
+<h3>Step 3</h3>
+
+<ul>
+<li><p>Write a command in the file <code>~/share/ex/unix/part1/list</code> which should be able to write a detailed list of all files and directories in <code>~/share/ex/unix/part1</code>, with colors, human readable file sizes, and a "/" at the end of directories</p>
+
+<pre><code>  hint:   man ls
+          man touch
+</code></pre></li>
+<li><p>Change the rights to <code>~/share/ex/unix/part1/list</code>, giving "read", "write", and "execution" rights to the owner, "read" and "write" rights to the group, and "read" only rights to all other user.</p>
+
+<pre><code>  hint:   man chmod
+          (man chown)
+</code></pre></li>
+</ul>
+
+
+<h3>Step 4</h3>
+
+<ul>
+<li><p>Push the content of <code>~/share</code> repository</p>
+
+<pre><code>  hint:   man git
+          man git add
+          man git commit
+          man git push
+</code></pre></li>
+</ul>
+
+
+<h2>Part 2</h2>
+
+<p><strong>Goal:</strong> Learn text editor, go deeper in console usage</p>
+
+<h3>Step 1</h3>
+
+<ul>
+<li><p>Write a command in the file <code>~/share/ex/unix/part2/list</code> which should be able to write a detailed list of all files and directories in <code>~/share/ex/unix/part1</code>, with colors, human readable file sizes, and a "/" at the end of directories.<br>In addition, in the content displayed, all "i" should be replaced by a "z".</p>
+
+<pre><code>  hint:   man sed
+          What is a `pipe` (`|`)?
+</code></pre></li>
+<li><p>Write a command in the file <code>~/share/ex/unix/part2/root</code> which should be able to write a detailed list of all files and directories in <code>/</code>, with colors, human readable file sizes, and a "/" at the end of directories.<br>Don't display any directory containing the letter "e" and "m".</p>
+
+<pre><code>  hint:   man grep
+</code></pre></li>
+</ul>
+
+
+<h3>Step 2</h3>
+
+<ul>
+<li><p>Get familiar with the editor <code>vi</code></p>
+
+<pre><code>  hint:   "vi" is hard to use at the begining! Spend some time reading the manual, and search some tricks online! Spend enough time to understand the "insert" modes.
+</code></pre></li>
+</ul>
+
+
+<h3>Step 3</h3>
+
+<ul>
+<li><p>Write a bash script in <code>~/share/ex/unix/part2/script.sh</code> which runs the scripts done in Step 1 and 2. I should be able to run it using <code>cd ~/share/ex/unix/part2/ &amp;&amp; ./script.sh</code></p>
+
+<pre><code>  hint:   man bash
+          search online how to write and execute bash scripts
+          man chmod
+</code></pre></li>
+<li><p>Learn about local and environment variables</p>
+
+<pre><code>  hint:   man bash
+          man env
+</code></pre></li>
+</ul>
+
+
+<h3>Step 4</h3>
+
+<ul>
+<li><p>Push the content of <code>~/share</code> repository</p>
+
+<pre><code>  hint:   man git
+          man git add
+          man git commit
+          man git pull
+          man git push
+</code></pre></li>
+</ul>
+
+</body>
+</html>
